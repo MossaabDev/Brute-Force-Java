@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
         boolean found = false;
         String password = "aaaa";
-        int a;
+        int a = 0;
         if (password.length()>MAX_LENGTH){
             System.out.println("password should be less than " + MAX_LENGTH + " symbols");
             found = true;
