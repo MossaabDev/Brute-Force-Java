@@ -1,15 +1,17 @@
 
 public class Main {
-    private static final int MAX_LENGTH = 4;
+    private static final int MAX_LENGTH = 5;
 
     public static void main(String[] args) {
         boolean found = false;
-        String password = "aaaa";
+        String password = "aaaaa";
+
         if (password.length()>MAX_LENGTH){
             System.out.println("password should be less than " + MAX_LENGTH + " symbols");
             found = true;
         }else{
             long start = System.currentTimeMillis();
+            //start brute force
             found = brute_force(password);
             long end = System.currentTimeMillis();
             if (found == true){
@@ -22,11 +24,12 @@ public class Main {
 
     public static boolean brute_force(String s){
         StringGenerator stringGenerator = new StringGenerator();
-        /*
+
         if (s != null){
 
             for (int i = 0; i < 1000000000; i++) {
                 if (stringGenerator.generateString(i).equals(s)){
+                    System.out.println("found : " + stringGenerator.generateString(i));
                     return true;
                 }
             }
@@ -35,15 +38,5 @@ public class Main {
             System.out.println("The Password Is Null!");
             return false;
         }
-
-         */
-        int a =0;
-        for (int i =0; i < 999999999; i++){
-            a++;
-            if (stringGenerator.generateString(i).equals(s)){
-                return true;
-            }
-        }
-        return true;
     }
 }
